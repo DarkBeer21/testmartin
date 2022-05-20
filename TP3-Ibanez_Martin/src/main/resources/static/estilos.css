@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+.page1 {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    background-color: #CDDCD2;
+    text-align:center;
+}
+
+.page2 {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    background-color: #E3F7E9;
+    text-align:center;
+}
+
+h1 {
+	font-size: 36px;
+	color: #000;
+	font-family: 'Open Sans';
+}
+
+h2 {
+	font-size: 28px;
+	color: #000;
+	font-family: 'Open Sans';
+}
+
+p {
+	font-size: 18px;
+	color: rgb(128, 128, 128);
+	font-family: 'Open Sans';
+}
+
+.header {
+    padding: 10px;
+    float: table;
+    width: 100%;
+    align-items: center;
+	text-align:center;
+}
+
+.main {
+    padding: 5px 20px;
+    float: table;
+    width: 95%;
+	text-align:justify;
+}
+
+
+.href{
+	font-size: 30px;
+	text-decoration: none;
+	text-align:center;
+    color: #299849;
+	
+}
+	

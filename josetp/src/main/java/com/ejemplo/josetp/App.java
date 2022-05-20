@@ -1,5 +1,4 @@
 package com.ejemplo.josetp;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,68 +14,42 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
-/**
- * Hello world!
- *
- */
 public class App 
 {
- 
 	public static void main(String[] args)
     {
         writePDF();
-    }
-    
-    private static void writePDF() {
- 
+    }    
+    private static void writePDF() { 
         Document document = new Document();
- 
         try {
         	String path = new File(".").getCanonicalPath();
-        	String FILE_NAME = path + "/mi-archivo.pdf";
-        	
+        	String FILE_NAME = path + "xD.pdf"; //nombre de archivo       	
             PdfWriter.getInstance(document, new FileOutputStream(new File(FILE_NAME)));
- 
-            document.open();
- 
+            document.open(); 
             Paragraph paragraphHello = new Paragraph();
-            paragraphHello.add("Hello iText paragraph!");
-            paragraphHello.setAlignment(Element.ALIGN_JUSTIFIED);
- 
+            paragraphHello.add("Esto es una prueba de texto");
+            paragraphHello.setAlignment(Element.ALIGN_JUSTIFIED); //justificado
             document.add(paragraphHello);
- 
-            Paragraph paragraphLorem = new Paragraph();
-            paragraphLorem.add("Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            		+ "Maecenas finibus fringilla turpis, vitae fringilla justo."
-            		+ "Sed imperdiet purus quis tellus molestie, et finibus risus placerat."
-            		+ "Donec convallis eget felis vitae interdum. Praesent varius risus et dictum hendrerit."
-            		+ "Aenean eu semper nunc. Aenean posuere viverra orci in hendrerit. Aenean dui purus, eleifend nec tellus vitae,"
-            		+ " pretium dignissim ex. Aliquam erat volutpat. ");
+            Paragraph paragraphLorem = new Paragraph(); //nuevo parrafo
+            paragraphLorem.add("Parrafo 1 test."
+            		+ "Texto parrafo 1."
+            		+ "Texto parrafo 1."
+            		+ "Texto parrafo 1."
+            		+ "Fin Texto parrafo 1. ");
             
-            java.util.List<Element> paragraphList = new ArrayList<>();
-            
+            java.util.List<Element> paragraphList = new ArrayList<>();           
             paragraphList = paragraphLorem.breakUp();
- 
             Font f = new Font();
             f.setFamily(FontFamily.COURIER.name());
             f.setStyle(Font.BOLDITALIC);
             f.setSize(8);
-            
-            Paragraph p3 = new Paragraph();
-            p3.setFont(f);
-            p3.addAll(paragraphList);
-            p3.add("TEST LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT!");
- 
             document.add(paragraphLorem);
-            document.add(p3);
             document.close();
- 
         } catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();
         } catch (IOException e) {
 			e.printStackTrace();
-		}
- 
+		} 
     }
 }
